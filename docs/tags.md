@@ -1,2 +1,6 @@
-# Tag index
+---
+hide:
+    - navigation
+---
+# Tag Index
 <!-- material/tags -->
