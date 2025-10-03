@@ -1,0 +1,8 @@
+mkdocs-include-markdown-plugin
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-rss-plugin
+mkdocs-jupyter
+pymdown-extensions
+numpy
+matplotlib
