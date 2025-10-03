@@ -87,6 +87,6 @@ extra:
       link: https://github.com/idyllm
 
 exclude_docs: |
-  assets/*.md
+  **/assets/*.md
 
 copyright: Copyright &copy; 2025 idyllm
