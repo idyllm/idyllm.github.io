@@ -66,11 +66,11 @@ nav:
     - blog/index.md
   - Projects: 
     - projects/index.md
-    - Example: 
-      - projects/example/index.md
-      - Design: projects/example/theory.md
-      - Assembly: projects/example/assembly.md
-      - Notebook: projects/example/notebook.ipynb
+    - Output Module:
+      - projects/output/index.md
+      - Design: projects/output/theory.md
+      - Assembly: projects/output/assembly.md
+      - Schematic: projects/output/assets/schematic.pdf
   - References:
     - references/index.md
   - About:
