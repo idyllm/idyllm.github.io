@@ -2,6 +2,10 @@
 
 An audio output module for Eurorack, combining two mono input channels into a stereo output with a panning mixer. The stereo output is suitable to drive headphones or small speakers.
 
+!!! repository "Project Source"
+
+    The project files, including schematic and layout, are available on [github](https://github.com/xdylanm/modular-output).
+
 # Features
 
 ![Output module](assets/images/output_module_sm.png){align=right}
