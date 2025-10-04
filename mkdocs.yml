@@ -54,6 +54,9 @@ plugins:
 markdown_extensions: 
   - pymdownx.arithmatex
   - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -66,11 +69,12 @@ nav:
     - blog/index.md
   - Projects: 
     - projects/index.md
-    - Example: 
-      - projects/example/index.md
-      - Design: projects/example/theory.md
-      - Assembly: projects/example/assembly.md
-      - Notebook: projects/example/notebook.ipynb
+    - Output Module:
+      - projects/output/index.md
+      - Design: projects/output/theory.md
+      - Assembly: projects/output/assembly.md
+      - Schematic: projects/output/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/modular-output
   - References:
     - references/index.md
   - About:
@@ -80,6 +84,9 @@ nav:
 extra_javascript:
   - scripts/arithmatex-config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
 
 extra:
   social:
