@@ -75,6 +75,12 @@ nav:
       - Assembly: projects/output/assembly.md
       - Schematic: projects/output/assets/schematic.pdf
       - Source: https://github.com/xdylanm/modular-output
+    - Mixer+ Module:
+      - projects/mixer/index.md
+      - Design: projects/mixer/theory.md
+      - Assembly: projects/mixer/assembly.md
+      - Schematic: projects/mixer/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/modular-mixer
   - References:
     - references/index.md
   - About:
