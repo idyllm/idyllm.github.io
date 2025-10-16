@@ -69,18 +69,28 @@ nav:
     - blog/index.md
   - Projects: 
     - projects/index.md
-    - Output Module:
+    - Output:
       - projects/output/index.md
       - Design: projects/output/theory.md
       - Assembly: projects/output/assembly.md
       - Schematic: projects/output/assets/schematic.pdf
       - Source: https://github.com/xdylanm/modular-output
-    - Mixer+ Module:
+    - Mixer+:
       - projects/mixer/index.md
       - Design: projects/mixer/theory.md
       - Assembly: projects/mixer/assembly.md
       - Schematic: projects/mixer/assets/schematic.pdf
       - Source: https://github.com/xdylanm/modular-mixer
+    - Dual Gate Delay:
+      - projects/gate-delay/index.md
+      - Design: 
+        - projects/gate-delay/theory.md
+        - IC Gate Delay: projects/gate-delay/design/ic_gate_delay.md
+        - Analog Gate Delay: projects/gate-delay/design/gate_delay_theory.md
+        - Gate Delay Calculation: projects/gate-delay/design/gate_delay_calc.ipynb
+      - Assembly: projects/gate-delay/assembly.md
+      - Schematic: projects/gate-delay/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/gate-delay
   - References:
     - references/index.md
   - About:
