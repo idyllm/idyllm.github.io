@@ -81,6 +81,14 @@ nav:
       - Assembly: projects/mixer/assembly.md
       - Schematic: projects/mixer/assets/schematic.pdf
       - Source: https://github.com/xdylanm/modular-mixer
+    - Dual VCA:
+      - projects/dual-vca/index.md
+      - Design: 
+        - projects/dual-vca/theory.md
+        - Notebook: projects/dual-vca/assets/design_calc.ipynb
+      - Assembly: projects/dual-vca/assembly.md
+      - Schematic: projects/dual-vca/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/vca-module
     - Dual Gate Delay:
       - projects/gate-delay/index.md
       - Design: 
