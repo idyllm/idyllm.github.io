@@ -14,26 +14,41 @@ In this note, I'm documenting the design steps for the core circuit, but will al
 
 ### Differential Pair
 
-The design starts with a BJT differential pair. 
+The design starts with an NPN BJT differential pair. 
 
-![image](assets/images/bjt_differntial_pair.png){: width="480"}
+![image](assets/images/npn_differential_pair.png){: width="480"}
 
-Using the relationship between $v_{be}$ and $i_c$ for a BJT ($i_c = I_S \exp\left(v_{be}/V_T\right)$) and assuming that the transistors are matched ($I_{S1} = I_{S2}$), the collector current in Q2 ($i_{c2}$) is related to the difference in the voltages at the bases when the emitters are at the same voltage $v_e$:
+Using the relationship between $v_{be}$ and $i_c$ for an NPN BJT ($i_c = I_S \exp\left(v_{be}/V_T\right)$) and assuming that the transistors are matched ($I_{S1} = I_{S2}$), the collector current in Q2 ($i_{c2}$) is related to the difference in the voltages at the bases when the emitters are at the same voltage $v_e$:
 
 $$\begin{align*}
 \frac{i_{c2}}{i_{c1}} &= \frac{I_{S2}\exp\left(v_{be2}/V_T\right)}{I_{S1}\exp\left(v_{be1}/V_T\right)} \\
-\to i_{c2} &= i_{c1}\exp \left(\frac{v_{b2} - v_{e} - v_{b1} + v_{e}}{V_T}\right) =  i_{c1}\exp \left(\frac{v_{b2} - v_{b1}}{V_T}\right)
+\to i_{c2} &= i_{c1}\exp \left(\frac{v_{b2} - v_{e} - v_{b1} + v_{e}}{V_T}\right) \\
+&=  i_{c1}\exp \left(\frac{v_{b2} - v_{b1}}{V_T}\right), \quad\mathrm{NPN}
 \end{align*}$$
 
  Grounding the base of Q2 sets $v_{b2} = 0$ and with $i_{c1} = I_{ref}$ 
  
- $$i_{c2} = I_{ref}\exp(-\frac{v_{b1}}{V_T})$$
+ $$i_{c2} = I_{ref}\exp\left(-\frac{v_{b1}}{V_T}\right)$$
 
  !!! note
 
     The choice of setting vb1 or vb2 to ground will change the sign on the input voltage, so inverting and non-inverting inputs can be constructed. The inverting input is useful when preceded by an inverting opamp buffer/sum.
 
-The voltage difference across $R_{ref}$ sets the reference current $I_{ref} = i_{c1}$. The voltage on the high side is set by the supply and on the low side by the op-amp, which replicates the reference voltage $V_n = 0$ at the non-inverting input to the collector of Q1. The circuit (described in [1]) is shown below:
+When the NPN transistors are replaced with PNPs, the sign on $v_{be}$ is inverted: $i_c = I_S \exp\left(-v_{be}/V_T\right)$ (current flowing out of the collector). Taking the ratio of $i_{c2}/i_{c1}$,
+
+$$\begin{align*}
+\frac{i_{c2}}{i_{c1}} &= \frac{I_{S2}\exp\left(-v_{be2}/V_T\right)}{I_{S1}\exp\left(-v_{be1}/V_T\right)} \\
+\to i_{c2} &= i_{c1}\exp \left(\frac{v_{e} - v_{b2} - v_{e} + v_{b1}}{V_T}\right) \\ 
+&=  i_{c1}\exp \left(\frac{v_{b1} - v_{b2}}{V_T}\right), \quad\mathrm{PNP}
+\end{align*}$$
+
+![image](assets/images/pnp_differential_pair.png){: width="480"}
+
+To obtain the same inverting behaviour as in the NPN case, ground the base of Q2 for the PNP differential pair
+
+ $$i_{c2} = I_{ref}\exp\left(-\frac{v_{b2}}{V_T}\right)$$
+
+Returning to the NPN differential pair, the voltage difference across $R_{ref}$ sets the reference current $I_{ref} = i_{c1}$. The voltage on the high side is set by the supply and on the low side by the op-amp, which replicates the reference voltage $V_n = 0$ at the non-inverting input to the collector of Q1. The circuit (described in [1]) is shown below:
 
 ![Differntial pair with refernce current source](assets/images/lin_voltage_to_exp_current_opa.png){: width="480"}
 
@@ -143,12 +158,9 @@ A schematic of the complete block is shown below.
 
 ## References
 
-1.  Hal Chamberlain, *Musical Applications of Microprocessors*, 2nd Ed.,
-    Hayden Books, 1985
+1.  Hal Chamberlain, *Musical Applications of Microprocessors*, 2nd Ed., Hayden Books, 1985
 2.  Rene Schmitz, "A tutorial on exponential converters and temperature
     compensation", [[schmitzbits.de](https://schmitzbits.de/expo_tutorial/index.html)]
-3.  Aaron Lanterman, "ECE4450 L18: Exponential Voltage-to-Current
-    Conversion & Tempco Resistors",
+3.  Aaron Lanterman, "ECE4450 L18: Exponential Voltage-to-Current Conversion & Tempco Resistors",
     [[youtube](https://www.youtube.com/watch?v=ZWJhApUmfEU)]
-4.  Paul Horowitz and Winfield Hill, *The Art of Electronics*, 3rd Ed.,
-    Cambridge University Press, 2015
+4.  Paul Horowitz and Winfield Hill, *The Art of Electronics*, 3rd Ed., Cambridge University Press, 2015
