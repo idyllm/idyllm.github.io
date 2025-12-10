@@ -101,6 +101,11 @@ nav:
       - Source: https://github.com/xdylanm/gate-delay
   - References:
     - references/index.md
+    - Building Blocks:
+      - references/buildingblocks/index.md
+      - Linear to Exponential Converters:
+        - references/buildingblocks/lin2exp.md
+        - Notebook: references/buildingblocks/ptc_equiv_calc.ipynb
   - About:
     - about.md
   - Tags: tags.md
