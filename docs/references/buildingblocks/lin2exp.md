@@ -26,11 +26,11 @@ $$\begin{align*}
 &=  i_{c1}\exp \left(\frac{v_{b2} - v_{b1}}{V_T}\right), \quad\mathrm{NPN}
 \end{align*}$$
 
- Grounding the base of Q2 sets $v_{b2} = 0$ and with $i_{c1} = I_{ref}$ 
+Grounding the base of Q2 sets $v_{b2} = 0$ and with $i_{c1} = I_{ref}$ 
  
- $$i_{c2} = I_{ref}\exp\left(-\frac{v_{b1}}{V_T}\right)$$
+$$i_{c2} = I_{ref}\exp\left(-\frac{v_{b1}}{V_T}\right)$$
 
- !!! note
+!!! note
 
     The choice of setting vb1 or vb2 to ground will change the sign on the input voltage, so inverting and non-inverting inputs can be constructed. The inverting input is useful when preceded by an inverting opamp buffer/sum.
 
@@ -46,7 +46,7 @@ $$\begin{align*}
 
 To obtain the same inverting behaviour as in the NPN case, ground the base of Q2 for the PNP differential pair
 
- $$i_{c2} = I_{ref}\exp\left(-\frac{v_{b2}}{V_T}\right)$$
+$$i_{c2} = I_{ref}\exp\left(-\frac{v_{b2}}{V_T}\right)$$
 
 Returning to the NPN differential pair, the voltage difference across $R_{ref}$ sets the reference current $I_{ref} = i_{c1}$. The voltage on the high side is set by the supply and on the low side by the op-amp, which replicates the reference voltage $V_n = 0$ at the non-inverting input to the collector of Q1. The circuit (described in [1]) is shown below:
 
@@ -128,6 +128,8 @@ $$\begin{aligned}
 \to \frac{R_0\alpha_0}{\alpha_0 - \alpha} &= R_0 + R_{f2} \\
 \to R_{f2} &= R_0\left(\frac{\alpha_0}{\alpha_0 - \alpha} - 1\right) = R_0\left(\frac{\alpha}{\alpha_0 - \alpha}\right)
 \end{aligned}$$
+
+There is a calculator for $R_{f2}$ and $R_0$ in this [notebook](ptc_equiv_calc.ipynb).
 
 The following table collects a few currently manufactured parts available on Digikey (as of 2025):
 

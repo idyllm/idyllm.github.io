@@ -1,6 +1,6 @@
 # Building Blocks
 
-Useful sub-circuits.
+Engineering notes for useful sub-circuits.
 
 ### [Linear voltage to exponential current](./lin2exp.md)
 
