@@ -45,29 +45,11 @@ t_d = \left\{
 
 ## Exponential Voltage to Current Conversion
 
-To enable exponential control of the delay time, this design uses a
-differential pair to convert a control voltage to a current. Following
-the derviation in Lanterman's lecture
-([youtube](https://www.youtube.com/watch?v=ZWJhApUmfEU)), the
-exponential voltage to current conversion is derived. Note that this
-design requires the opposite relationship betwen input control voltage
-(CV) and programming current: increasing delay (increasing CV) decreases
-the current to timing capacitors.
+This sub-circuit design is presented in the Building Blocks section: [Linear to Exponential Voltage Conversion](../../../references/buildingblocks/lin2exp.md). Relevant adjustments to that core design are detailed below.
 
-![image](assets/images/lin_voltage_to_exp_current.png)
+For the analog delay, an inverting relation between the linear input voltage and the exponential current is required: increasing the control voltage should increase the delay time, which implies reducing the current supplied to the integrating capacitors. Therefore, the base of the BJT in the reference current feedback loop is grounded, such that
 
-Using the relationship between $v_{be}$ and $i_c$ for a BJT
-($i_c = I_S \exp\left(v_{be}/V_T\right)$) and assuming that the
-transistors are matched, the collector current in Q2 ($i_{c2}$) is
-related to the difference in the voltages at the bases when the emitters
-are at the same voltage $v_e$. Grounding the base of *Q1* (not Q2) gives
-
-$$i_{c2} = i_{c1}\exp\left(\frac{v_{b2}}{V_T}\right)$$
-
-The voltage difference across $R_P$ sets the reference current
-$I_{ref} = i_{c1}$. The voltage on the high side is set by the supply
-and on the low side by the op-amp, which replicates the reference
-voltage $V_L$ at the non-inverting input to the collector of Q1.
+$$i_{c2} = i_{c1}\exp\left(\frac{v_{b2}}{V_T}\right).$$
 
 To establish the desired gain of an input stage, let
 $v_{b2} = A v_{in}$. When the input voltage travels over the full range
@@ -95,85 +77,7 @@ A &= -1.3816 V_T = -0.03578 \simeq -\frac{1}{28} = -\frac{R_f}{R_1} \frac{R_2 + 
 where $R'_2$ is adjusted such that the voltage divider gives a gain of
 $\frac{27}{28}$.
 
-## Temperature Compensation
-
-Continuing with Lanterman's derivation, replace $R_f$ with a tempco
-resistor, $R_f = R_0[1+\alpha(T-T_0)]$ where $\alpha$ is the thermal
-coefficient (note: use $A'$ in place of $\tilde{\mathfrak{s}}$)
-
-$$\begin{aligned}
-A = -\frac{R_f}{R_1}A' &= -\frac{R_0[1+\alpha(T-T_0)]}{R_1}A' = -\underbrace{1.3816}_{B} V_T \\
-\to \frac{R_0[1+\alpha(T-T_0)]}{R_1}A' &= \frac{kT}{q}B = \frac{k[T_0 + (T-T_0)]}{q}B \\
-&= \underbrace{\frac{kT_0}{q}}_{V_{T0}}B + \frac{kT_0}{q}\frac{(T- T_0)}{T_0}B \\
-\to \frac{R_0}{R_1}A' + \frac{\alpha R_0 (T-T_0)}{R_1}A' &= \underbrace{V_{T0}B}_{A_0} + \frac{V_{T0}}{T_0}B (T- T_0) \\
-\to A_0 &= \frac{R_0}{R_1}A' = V_{T0}B \\
-\to \frac{\alpha R_0 (T-T_0)}{R_1}A' &= A_0 \alpha(T-T_0) = V_{T0}B\frac{1}{T_0}B (T- T_0) \\
-\to \alpha &= \frac{1}{T_0} = 0.0034
-\end{aligned}$$
-
-Note that the temperature coefficient is positive. It\'s hard to find
-3300ppm tempco resistors in 2025, so here\'s an alternative derivation
-where $R_f = R_{f1}\parallel R_{f2}$ where $R_{f1}$ is a tempco resistor
-and $R_{f2}$ is a regular resistor (assumed constant in temperature).
-
-$$\begin{aligned}
-R_{f1}\parallel R_{f2} &= \frac{R_{f1}R_{f2}}{R_{f1} + R_{f2}} \\
-&= \frac{R_0[1+\alpha(T-T_0)]R_{f2}}{R_0[1+\alpha(T-T_0)] + R_{f2}} \\
-&= R_0\frac{1 + \alpha(T-T_0)}{\frac{R_0}{R_{f2}}[1+ \alpha(T-T_0)] + 1} \\
-&= R_0\frac{1 + \alpha(T-T_0)}{\left(1 + \frac{R_0}{R_{f2}}\right) + \underbrace{\frac{R_0}{R_{f2}}\alpha}_{\alpha'}(T-T_0)} \\
-\end{aligned}$$
-
-Assuming $\alpha'(T-T_0) \ll 1$ (prefer $R_{f2} > R_0$)
-
-$$\frac{1}{p + \alpha(T-T_0)} \approx \frac{1}{p} - \frac{\alpha(T-T_0)}{p^2}$$
-
-such that
-
-$$\begin{aligned}
-R_{f1}\parallel R_{f2} &\approx R_0\left[1 + \alpha(T-T_0)\right]\left(\frac{R_{f2}}{R_0 + R_{f2}}\right) \left[ 1 - \frac{R_{f2}\alpha'(T-T_0)}{R_0 + R_{f2}}\right] \\
-&= \left(\frac{R_0 R_{f2}}{R_0 + R_{f2}}\right)\left[1 + \alpha(T-T_0)\right] \left[ 1 - \underbrace{\frac{R_0}{R_0 + R_{f2}}}_{\gamma}\alpha(T-T_0)\right] \\
-&= \left(\frac{R_0 R_{f2}}{R_0 + R_{f2}}\right)\left[1 + \alpha(T-T_0)\right] \left[ 1 - \gamma\alpha(T-T_0)\right] \\
-&= \left(\frac{R_0 R_{f2}}{R_0 + R_{f2}}\right)\left[1 + (1-\gamma)\alpha(T-T_0) - \gamma\alpha^2(T-T_0)^2\right]\\
-\end{aligned}$$
-
-Given an available PTC resistor with resistance $R_0$ and temperature
-coefficient $\alpha_0 > \alpha = 0.0034$, the parallel resistance
-$R_{f2}$ can be found as
-
-$$\begin{aligned}
-\alpha &= (1-\gamma)\alpha_0 = \left(1 - \frac{R_0}{R_0 + R_{f2}}\right)\alpha_0 \\
-\to \frac{R_0}{R_0 + R_{f2}} &= 1 - \frac{\alpha}{\alpha_0} \\
-\to \frac{R_0\alpha_0}{\alpha_0 - \alpha} &= R_0 + R_{f2} \\
-\to R_{f2} &= R_0\left(\frac{\alpha_0}{\alpha_0 - \alpha} - 1\right) = R_0\left(\frac{\alpha}{\alpha_0 - \alpha}\right)
-\end{aligned}$$
-
-The following table collects a few currently manufactured parts
-available on Digikey (as of 2025):
-
-|Mfg.               |Part \#            |Package    |$R_0\ (\mathrm{k}\Omega)$  |$\alpha (\mathrm{ppm/K})$|
-|-------------------|-------------------|-----------|---------------------------|-------------------------|
-|KOA Speer          |LT732ATTD202J3900  |0805       |2                          |3900|
-|KOA Speer          |LT732ATTD102J3600  |0805       |1                          |3600|
-|Vishay Dale        |TFPT1206L1002FM    |1206       |10                         |4110|
-|Vishay Dale        |TFPTL15L5001FL2B   |THT 2.5mm  |5                          |4110|
-|Texas Instruments  |TMP6131LPGM        |TO90-2     |10                         |6400|
-
-
-As an example, the TMP6121LPGM (10k, 6400ppm/C TCR with 1% tolerance) in
-parallel with a 12k resistor approximates a 5.45k resistor with a
-3400ppm/C temperature with a maximum error of 1.4% over the range from
-0-70C.
-
-![image](assets/images/approx_6400ppm_PTC_R.png)
-
-A second example is the LT732ATTD202J3900 (2k, 3900ppm/C TCR with 10%
-tolerance) in parallel with a 12k resistor. This configuration
-approximates a 1.714k resistor with a 3400ppm/C TCR to within 0.5% over
-the range from 0-70C.
-
-![image](assets/images/approx_3900ppm_PTC_R.png)
-
-The updated schematic is shown below.
+Temperature compensation is independent of the input gain, so the same analysis given in the Building Block applies, including the approaches to approximate a 3400ppm/C PTC thermistor. The updated schematic is shown below.
 
 ![image](assets/images/lin_voltage_to_exp_current_tempco.png)
 
