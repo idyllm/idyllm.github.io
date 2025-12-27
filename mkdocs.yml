@@ -99,6 +99,16 @@ nav:
       - Assembly: projects/gate-delay/assembly.md
       - Schematic: projects/gate-delay/assets/schematic.pdf
       - Source: https://github.com/xdylanm/gate-delay
+    - ADSR EG:
+      - projects/adsr-eg/index.md
+      - Design: 
+        - projects/adsr-eg/theory.md
+        - Input Buffer: projects/adsr-eg/input_buffer.md
+        - Loop Comparator: projects/adsr-eg/loop_comparator.md
+        - Trigger: projects/adsr-eg/trigger.md
+      - Assembly: projects/adsr-eg/assembly.md
+      - Schematic: projects/adsr-eg/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/adsr-eg
   - References:
     - references/index.md
     - Building Blocks:

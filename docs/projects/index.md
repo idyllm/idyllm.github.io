@@ -50,9 +50,9 @@ Another classic built around a Sallen-Key architecture with vactrols to provide 
 
 Based on the design from Moritz Klein, this VCO is a saw-core with V/oct tuning and saw, pulse (with PWM) and triangle outputs. (not documented yet).
 
-### ADSR EG
+### [ADSR EG](adsr-eg/index.md)
 
-A 555-core ADSR envelope generator with some extras, including looping for LFO behaviour and a trigger input. (not documented yet).
+A 555-core ADSR envelope generator with some extras, including looping for LFO behaviour and a trigger input.
 
 ### Random Noise
 
