@@ -1,8 +1,6 @@
 
 # Mixer+ Module
 
-![Mixer+ Module](assets/images/mixer_module_sm.png){align=right}
-
 The Mixer+ module includes a basic three channel mixer as well as an
 attenuverter with the option to add distortion to the output signal.
 
@@ -18,6 +16,8 @@ An [assembly guide](assembly.md) contains the BOM and assembly instructions. The
     The project files, including schematic and layout, are available on [github](https://github.com/xdylanm/modular-mixer).
 
 ## 3 Channel Mixer
+
+![Mixer+ Module](assets/images/mixer_module_sm.png){: align=right}
 
 The 3 channel mixer is designed for a maximum of unit gain per channel.
 

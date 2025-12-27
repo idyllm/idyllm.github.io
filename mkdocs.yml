@@ -89,7 +89,7 @@ nav:
       - Assembly: projects/dual-vca/assembly.md
       - Schematic: projects/dual-vca/assets/schematic.pdf
       - Source: https://github.com/xdylanm/vca-module
-    - Dual Gate Delay:
+    - Gate Delay:
       - projects/gate-delay/index.md
       - Design: 
         - projects/gate-delay/theory.md

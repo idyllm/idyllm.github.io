@@ -1,7 +1,5 @@
 # Dual VCA
 
-![Dual VCA](./assets/images/dual_vca_sq.jpg){width="400", align="right"}
-
 A dual VCA module based on the LM13700 in the Eurorack format.
 
 * Module size: 2HP (10mm)
@@ -15,6 +13,8 @@ The control voltage (CV) of the VCA can be connected to the envelope from an ADS
 
 
 ## Features
+
+![Dual VCA](./assets/images/dual_vca_sq.jpg){: width="240", align="right"}
 
 The module is implemented with the LM13700 and features
 
