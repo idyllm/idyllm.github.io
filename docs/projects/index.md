@@ -30,9 +30,9 @@ A simple dual VCA with linear control built around the LM13700 OTA.
 
 A gate delay with buffering, capable of delaying 1-4 pulses while maintaining pulse length.
 
-### '358 SNH
+### ['358 SNH](sample-and-hold/index.md)
 
-A sample and hold module built around the LM398 with smoothed (low-pass filtered) output. (not documented yet)
+A sample and hold module built around the LF398 with smoothed (low-pass filtered) output.
 
 ## Filters
 
