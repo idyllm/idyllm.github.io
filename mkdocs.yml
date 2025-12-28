@@ -99,6 +99,12 @@ nav:
       - Assembly: projects/gate-delay/assembly.md
       - Schematic: projects/gate-delay/assets/schematic.pdf
       - Source: https://github.com/xdylanm/gate-delay
+    - Sample and Hold:
+      - projects/sample-and-hold/index.md
+      - Design: projects/sample-and-hold/theory.md
+      - Assembly: projects/sample-and-hold/assembly.md
+      - Schematic: projects/sample-and-hold/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/sample-and-hold
     - ADSR EG:
       - projects/adsr-eg/index.md
       - Design: 
