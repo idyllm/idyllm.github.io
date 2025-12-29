@@ -115,6 +115,15 @@ nav:
       - Assembly: projects/adsr-eg/assembly.md
       - Schematic: projects/adsr-eg/assets/schematic.pdf
       - Source: https://github.com/xdylanm/adsr-eg
+    - Random Noise:
+      - projects/noise/index.md
+      - Design: 
+        - projects/noise/design.md
+        - Noise and Filter Theory: projects/noise/theory.md
+        - Notebook: projects/noise/freq_resp.ipynb  
+      - Assembly: projects/noise/assembly.md
+      - Schematic: projects/noise/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/noise
   - References:
     - references/index.md
     - Building Blocks:

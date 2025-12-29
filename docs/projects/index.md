@@ -54,9 +54,9 @@ Based on the design from Moritz Klein, this VCO is a saw-core with V/oct tuning 
 
 A 555-core ADSR envelope generator with some extras, including looping for LFO behaviour and a trigger input.
 
-### Random Noise
+### [Random Noise](noise/index.md)
 
-A noise generating module with white, pink and blue noise outputs as well as grains inspired by the MFOS Noise Cornucopia. (not documented  yet).
+A noise generating module with white, pink and blue noise outputs as well as grains inspired by the MFOS Noise Cornucopia.
 
 ### Sequencer-1
 
