@@ -36,9 +36,9 @@ A sample and hold module built around the LF398 with smoothed (low-pass filtered
 
 ## Filters
 
-### State Variable Filter
+### [State Variable Filter](svf-1/index.md)
 
-A classic state variable filter with second-order low-, high- and band-pass outputs (+ a notch filter output). (not documented yet).
+A classic state variable filter with second-order low-, high- and band-pass outputs (+ a notch filter output).
 
 ### Low Pass Gate
 
