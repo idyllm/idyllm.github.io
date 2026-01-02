@@ -105,6 +105,15 @@ nav:
       - Assembly: projects/sample-and-hold/assembly.md
       - Schematic: projects/sample-and-hold/assets/schematic.pdf
       - Source: https://github.com/xdylanm/sample-and-hold
+    - State Variable Filter:
+      - projects/svf-1/index.md
+      - Design: 
+        - projects/svf-1/theory.md
+        - Second Order Filters: projects/svf-1/notebook.ipynb
+        - DC Gain Analysis: projects/svf-1/dc_gain_analysis.md
+      - Assembly: projects/svf-1/assembly.md
+      - Schematic: projects/svf-1/assets/svf-1.pdf
+      - Source: https://github.com/xdylanm/state-variable-filter
     - ADSR EG:
       - projects/adsr-eg/index.md
       - Design: 
@@ -146,6 +155,10 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/idyllm
+      name: GitHub
+    - icon: fontawesome/regular/envelope
+      link: mailto:idyllm.modular@gmail.com
+      name: email
 
 exclude_docs: |
   **/assets/*.md
