@@ -1,5 +1,8 @@
 # State Variable Filter
 
+![SVF faceplate](./assets/images/svf-faceplate-light.png#only-light){align=right}
+![SVF faceplate](./assets/images/svf-faceplate-dark.png#only-dark){align=right}
+
 The state variable filter is a second order (12dB/oct) filter with low-, high- and band-pass outputs and adjustable resonance. This is a classic filter design that appears in a number of synths, including the Oberheim SEM. 
 
 * Module size: 8HP (40mm)
@@ -27,6 +30,21 @@ Following the [notes](https://www.eddybergman.com/2024/04/THVCF1statevariablefil
 [Assembly Guide](assembly.md)
 
 [Schematic](assets/svf-1.pdf)
+
+## Changelog
+
+**v1.2**
+
+* Fixed error in Q1 (matched PNP) orientation in schematic and PCB wiring.
+
+**v1.1**
+
+* Fixed wrong part for Q1 (matched PNP), replaced with DMMT5401.
+* Fixed order of trim pots and summing resistors for CV inputs.
+
+**v1.0**
+
+* Initial board.
 
 ## References
 
