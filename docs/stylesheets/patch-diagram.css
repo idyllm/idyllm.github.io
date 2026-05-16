@@ -1,0 +1,58 @@
+/* ── Responsive scaling ─────────────────────────────────────────────────── */
+/* Material MkDocs renders Mermaid SVGs inside a closed shadow root, so CSS
+   cannot target the SVG directly. The shadow host (div.mermaid) is wrapped in
+   .patch-diagram-wrap by our JS before Material processes the diagram. The SVG
+   is rendered with width="100%" so it fills the host; an inline max-width
+   (set in JS) prevents small diagrams from stretching to the full column. */
+.patch-diagram-wrap div.mermaid {
+  display: block;
+  width: 100%;
+}
+
+/* ── Diagram wrapper ────────────────────────────────────────────────────── */
+.patch-diagram-wrap {
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Expand button ──────────────────────────────────────────────────────── */
+.patch-diagram-expand {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: rgba(128, 128, 128, 0.3);
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.45;
+  transition: opacity 0.15s;
+}
+
+.patch-diagram-expand:hover {
+  opacity: 1;
+}
+
+/* ── Lightbox ───────────────────────────────────────────────────────────── */
+.patch-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patch-lightbox-inner {
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 4px;
+}
