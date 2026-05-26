@@ -40,9 +40,9 @@ A sample and hold module built around the LF398 with smoothed (low-pass filtered
 
 A classic state variable filter with second-order low-, high- and band-pass outputs (+ a notch filter output).
 
-### Low Pass Gate
+### [Low Pass Gate](lpg/index.md)
 
-Another classic built around a Sallen-Key architecture with vactrols to provide variable impedance. (not documented yet).
+Another classic built around a Sallen-Key architecture with vactrols to provide variable impedance.
 
 ## Sources
 
