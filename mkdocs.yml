@@ -119,6 +119,12 @@ nav:
       - Assembly: projects/svf-1/assembly.md
       - Schematic: projects/svf-1/assets/svf-1.pdf
       - Source: https://github.com/xdylanm/state-variable-filter
+    - Low Pass Gate:
+      - projects/lpg/index.md
+      - Design: projects/lpg/theory.md
+      - Assembly: projects/lpg/assembly.md
+      - Schematic: projects/lpg/assets/lpg.pdf
+      - Source: https://github.com/xdylanm/low-pass-gate
     - ADSR EG:
       - projects/adsr-eg/index.md
       - Design: 
@@ -171,4 +177,4 @@ extra:
 exclude_docs: |
   **/assets/*.md
 
-copyright: Copyright &copy; 2025 idyllm
+copyright: Copyright &copy; 2025-2026 idyllm
