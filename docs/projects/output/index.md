@@ -6,6 +6,10 @@ An audio output module for Eurorack, combining two mono input channels into a st
 
     The project files, including schematic and layout, are available on [github](https://github.com/xdylanm/modular-output).
 
+!!! note
+
+    The LM386 output amplifiers hiss like crazy, and this design should be updated. (July 2026)
+
 # Features
 
 ![Output module](assets/images/output_module_sm.png){align=right}
