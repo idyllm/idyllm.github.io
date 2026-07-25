@@ -9,6 +9,10 @@ A gate delay module in the Eurorack format.
 
     The project files, including schematic and layout, are available on [github](https://github.com/xdylanm/gate-delay)
 
+!!! note
+
+    There's a bug somewhere in the firmware, so I wouldn't recommend this one until that's fixed. (July 2026)
+
 ## Features
 
 ![Gate Delay v2 PCB](assets/images/ic-gate-delay.jpg){: width="240", align=right}
