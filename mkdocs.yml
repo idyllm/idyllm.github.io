@@ -86,6 +86,13 @@ nav:
       - Assembly: projects/mixer/assembly.md
       - Schematic: projects/mixer/assets/schematic.pdf
       - Source: https://github.com/xdylanm/modular-mixer
+    - System PSU:
+      - projects/psu/index.md
+      - Design: projects/psu/theory.md
+      - Measurement: projects/psu/measurement.md
+      - Assembly: projects/psu/assembly.md
+      - Schematic: projects/psu/assets/schematic.pdf
+      - Source: https://github.com/xdylanm/modular-system-psu
     - Dual VCA:
       - projects/dual-vca/index.md
       - Design: 
