@@ -12,9 +12,9 @@ An audio output module for Eurorack, combining two mono input channels into a st
 
 The Mixer+ module includes a basic three channel mixer as well as an attenuverter with the option to add distortion to the output signal.
 
-### USB-C PSU
+### [USB-C System PSU](psu/index.md)
 
-A power supply with USB-C PD input and SMPS delivering +12V, +5V, and -12V rails. (not documented yet). 
+A 36W power supply with USB-C PD input and SMPS delivering +12V, +5V, and -12V rails at 1.2A each. Front panel and in-case mounting options. 
 
 ### ProtoPower
 
